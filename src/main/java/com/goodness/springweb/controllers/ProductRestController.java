@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,13 +35,13 @@ public class ProductRestController {
 
 	// Create a product
 	@RequestMapping(value = "/products/", method = RequestMethod.POST)
-	public Products createProduct(Products product) {
+	public Products createProduct(@RequestBody Products product) {
 		return repository.save(product);
 	}
 
 	// Update a product
 	@RequestMapping(value = "/products/", method = RequestMethod.PUT)
-	public Products updateProduct(Products product) {
+	public Products updateProduct(@RequestBody Products product) {
 		return repository.save(product);
 	}
 
